@@ -31,9 +31,6 @@
     <Content Include="Les2.js">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="server.js" />
-    <Content Include="package.json" />
-    <Content Include="README.md" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
   <ProjectExtensions>
