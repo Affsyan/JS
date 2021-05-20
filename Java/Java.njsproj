@@ -28,7 +28,22 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="Les2.js">
+    <Content Include="Task1.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Task2.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Task3.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Task4.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Task5.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Task6.js">
       <SubType>Code</SubType>
     </Content>
   </ItemGroup>
