@@ -1,8 +1,8 @@
-﻿
-let arr = [["telephone", 13500], ["electric iron", 7250], ["scooter", 22630]];
-var j = 0;
+'use strict'
+
+let arr = [["telephone", 13500, 0, 1], ["electric iron", 7250, 1, 1], ["scooter", 22630, 2, 1]];
 var table = document.createElement("table");
-var sum = 0;
+let baskArr = [];
 basket.textContent = "Корзина пуста"
 
 for (var y = 0; y < arr.length; y++) {
@@ -15,10 +15,11 @@ for (var y = 0; y < arr.length; y++) {
             tr.appendChild(td);
             table.appendChild(tr);
         } else {
-            var td = document.createElement('td');
+            var td = document.createElement('BUTTON');
             td.id = "button" + y;
             td.className = "button";
             td.textContent = "Купить";
+            td.dataset.id = y;
             tr.appendChild(td);
             table.appendChild(tr);
         }
@@ -26,20 +27,29 @@ for (var y = 0; y < arr.length; y++) {
 }
 document.body.appendChild(table);
 
-button0.onclick = function () {
-    j++;
-    sum = sum + arr[0][1];
-    basket.textContent = "В корзине " + j + " товаров на сумму " + sum;
-}
-button1.onclick = function () {
-    j++;
-    sum = sum + arr[1][1];
-    basket.textContent = "В корзине " + j + " товаров на сумму " + sum;
-}
-button2.onclick = function () {
-    j++;
-    sum = sum + arr[2][1];
-    basket.textContent = "В корзине " + j + " товаров на сумму " + sum;
-}
+const tables = document.querySelector("table");
 
-
+tables.addEventListener('click', function (e) {
+    var sum = 0;
+    if (e.target.tagName === 'BUTTON') {
+        if (baskArr.length != 0) {
+            let count = 0;
+            for (var i = 0; i < baskArr.length; i++) {
+                if (baskArr[i][2] == arr[e.target.dataset.id][2]) {
+                    baskArr[i][3] = baskArr[i][3] + 1;
+                    count = count + 1; 
+                }
+            }
+            if (count == 0) {
+                baskArr.push(arr[e.target.dataset.id]);
+            }
+        } else {
+            baskArr.push(arr[e.target.dataset.id]);
+        }
+    }
+    for (var j = 0; j < baskArr.length; j++) {
+        sum = sum + (baskArr[j][1] * baskArr[j][3])
+    }
+    basket.textContent = "В корзине " + baskArr.length + " товара на сумму " + sum;
+    console.log(baskArr);
+})
