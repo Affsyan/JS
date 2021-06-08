@@ -53,3 +53,4 @@ tables.addEventListener('click', function (e) {
     basket.textContent = "В корзине " + baskArr.length + " товара на сумму " + sum;
     console.log(baskArr);
 })
+
