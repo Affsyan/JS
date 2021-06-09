@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .text {
+            width: auto;
+            height: auto;
+            background: #e7e7e7;
+            text-align: center;
+            font-size: 150%;
+            font-weight: bolder;
+            padding: 15px 10px;
+            border-radius: 8px;
+            font-family: 'Times New Roman';
+        }
+
+        .button {
+            width: auto;
+            height: auto;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            font-size: 150%;
+            font-weight: bolder;
+            padding: 15px 32px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Times New Roman';
+        }
+
+        #basket {
+            float: right;
+        }
+
+        #popup {
+            width: 310px;
+            height: 250px;
+            background-color: #ccc;
+            border: 1px solid #999;
+            border-radius: 6px;
+            position: fixed;
+            top: 100px;
+            left: calc(65%);
+            display: none;
+            padding: 15px;
+        }
+
+        #closePopupBtn {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="basket">
+        <div class="text">
+            Корзина пуста
+        </div>
+    </div>
+
+    <div id="popup">
+        <button id="closePopupBtn">&#x2715;</button>
+        <p>
+            <b>Адресс доставки.</b><br><br>
+            <b>Город:</b><br>
+            <input type="text" size="40"><br>
+            <b>Улица:</b><br>
+            <input type="text" size="40"><br>
+            <b>Квартира:</b><br>
+            <input type="text" size="40">
+        </p>
+        <p>
+            <b>Коментарий:</b><br>
+            <textarea name="comment" cols="40" rows="3"></textarea>
+        </p>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
